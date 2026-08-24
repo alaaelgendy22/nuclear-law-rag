@@ -31,13 +31,31 @@ flowchart LR
     I --> J[Answer with Source markers]
 ```
 
+## Technology stack
+
+| Area | Technologies |
+|---|---|
+| Application | Python, Streamlit |
+| Retrieval | BM25, sentence transformers, ChromaDB |
+| Documents | page-aware PDF extraction and validated upload/URL ingestion |
+| Generation | OpenAI, Gemini, OpenRouter, or local Ollama |
+| Verification | unittest and evidence-led documentation |
+
 ## Quick start
 
 ```bash
 python -m venv .venv
+# macOS/Linux
 source .venv/bin/activate
-pip install -r requirements.txt
+# Windows PowerShell
+.venv\Scripts\Activate.ps1
+
+python -m pip install -r requirements.txt
+# macOS/Linux
 cp .env.example .env
+# Windows PowerShell
+Copy-Item .env.example .env
+
 streamlit run streamlit_app.py
 ```
 
